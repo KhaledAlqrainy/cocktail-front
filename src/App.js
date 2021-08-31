@@ -1,12 +1,16 @@
 import React from 'react';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import Profile from './components/Profile';
+import Main from './components/Main';
+import Favorite from './components/Favorite'
 import {
   BrowserRouter as Router,
   Switch,
   Route
 } from "react-router-dom";
 import { withAuth0 } from '@auth0/auth0-react';
+
 
 
 class App extends React.Component {
@@ -20,10 +24,13 @@ class App extends React.Component {
             <Header />
             <Switch>
               <Route exact path="/">
-                {/* TODO: if the user is logged in, render the `Home` component, if they are not, render the `Login` component */}
+                <Main/>
               </Route>
-              <Route exact path="/favFlowers">
-                {/* TODO: if the user is logged in, render the `FavFlowers` component, if they are not, render the `Login` component */}
+              <Route exact path="/Favorite">
+                <Favorite/>
+              </Route>
+              <Route exact path="/Profile">
+                <Profile/>
               </Route>
             </Switch>
             <Footer />
